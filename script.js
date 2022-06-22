@@ -283,15 +283,21 @@ function plusFunc() {
     else if (deystvie === "%+") {
         deystvie = "+";
         numberInMemory = numberInMemory - prom + multiprom
-        fInput.textContent = numberInMemory;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
+        fInput.textContent = parseFloat(+numberInMemory.toFixed(toFixedNumInMemory));
         currentValue = 0;
         notDotFunc();
     }
 
     else if(deystvie === "%-") {
         deystvie = "+";
-        numberInMemory = numberInMemory + prom - multiprom
-        fInput.textContent = numberInMemory;
+        numberInMemory = numberInMemory + prom - multiprom;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
+        fInput.textContent = parseFloat(+numberInMemory.toFixed(toFixedNumInMemory));
         currentValue = 0;
         notDotFunc();
     }
@@ -380,7 +386,10 @@ function minusFunc() {
     else if (deystvie === "%+") {
         deystvie = "-";
         numberInMemory = numberInMemory - prom + multiprom
-        fInput.textContent = numberInMemory;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
+        fInput.textContent = parseFloat(+numberInMemory.toFixed(toFixedNumInMemory));
         currentValue = 0;
         notDotFunc();
     }
@@ -388,7 +397,10 @@ function minusFunc() {
     else if(deystvie === "%-") {
         deystvie = "-";
         numberInMemory = numberInMemory + prom - multiprom
-        fInput.textContent = numberInMemory;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
+        fInput.textContent = parseFloat(+numberInMemory.toFixed(toFixedNumInMemory));
         currentValue = 0;
         notDotFunc();
     }
@@ -477,7 +489,10 @@ function multiplicationFunc() {
     else if (deystvie === "%+") {
         deystvie = "x";
         numberInMemory = numberInMemory - prom + multiprom
-        fInput.textContent = numberInMemory;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
+        fInput.textContent = parseFloat(+numberInMemory.toFixed(toFixedNumInMemory));
         currentValue = 0;
         notDotFunc();
     }
@@ -485,7 +500,10 @@ function multiplicationFunc() {
     else if(deystvie === "%-") {
         deystvie = "x";
         numberInMemory = numberInMemory + prom - multiprom
-        fInput.textContent = numberInMemory;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
+        fInput.textContent = parseFloat(+numberInMemory.toFixed(toFixedNumInMemory));
         currentValue = 0;
         notDotFunc();
     }
@@ -574,7 +592,10 @@ function divisionFunc() {
     else if (deystvie === "%+") {
         deystvie = "/";
         numberInMemory = numberInMemory - prom + multiprom
-        fInput.textContent = numberInMemory;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
+        fInput.textContent = parseFloat(+numberInMemory.toFixed(toFixedNumInMemory));
         currentValue = 0;
         notDotFunc();
     }
@@ -582,7 +603,10 @@ function divisionFunc() {
     else if(deystvie === "%-") {
         deystvie = "/";
         numberInMemory = numberInMemory + prom - multiprom
-        fInput.textContent = numberInMemory;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
+        fInput.textContent = parseFloat(+numberInMemory.toFixed(toFixedNumInMemory));
         currentValue = 0;
         notDotFunc();
     }
@@ -734,24 +758,36 @@ equalButton.addEventListener("click",equal)
 function equal() {
     if (deystvie === "+") {
         currentValue = numberInMemory + currentValue;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
         fInput.textContent = parseFloat(+currentValue.toFixed(toFixedNumInMemory));
         deystvie = "=";
         notDotFunc();
     }
     else if (deystvie === "-") {
         currentValue = numberInMemory - currentValue;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
         fInput.textContent = parseFloat(+currentValue.toFixed(toFixedNumInMemory));
         deystvie = "=";
         notDotFunc();
     }
     else if (deystvie === "x") {
         currentValue = numberInMemory * currentValue;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
         fInput.textContent = parseFloat(+currentValue.toFixed(toFixedNumInMemory));
         deystvie = "=";
         notDotFunc();
     }
     else if (deystvie === "/") {
         currentValue = numberInMemory / currentValue;
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
+        }
         fInput.textContent = parseFloat(+currentValue.toFixed(toFixedNumInMemory));
         deystvie = "=";
         notDotFunc();
@@ -760,8 +796,8 @@ function equal() {
     else if (deystvie === "%+") {
         deystvie = "%=";
         numberInMemory = numberInMemory - prom + multiprom;
-        if(toFixedNumInMemory<= (f(numberInMemory))) {
-            toFixedNumInMemory = (f(numberInMemory))
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
         }
         fInput.textContent = parseFloat(+numberInMemory.toFixed(toFixedNumInMemory));
         currentValue = 0;
@@ -771,8 +807,8 @@ function equal() {
     else if(deystvie === "%-") {
         deystvie = "%=";
         numberInMemory = numberInMemory + prom - multiprom;
-        if(toFixedNumInMemory<= (f(numberInMemory))) {
-            toFixedNumInMemory = (f(numberInMemory))
+        if (toFixedNumInMemory <= toFixedNum) {
+            toFixedNumInMemory = toFixedNum;
         }
         fInput.textContent = parseFloat(+numberInMemory.toFixed(toFixedNumInMemory));
         currentValue = 0;
