@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 600px;
+    background-color: rgb(0,0,0);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.row {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-evenly;
+ width: 350px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 65%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(80, 80, 80);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+#zero {
+    width: 150px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    justify-content: flex-start;
+}
+
+#dot > .value{
+    margin-top: 10px;
+}
+
+.value {
+    font-size: 30px;
+    color:aliceblue;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.value_zero {
+    font-size: large;
+    color:aliceblue;
+    margin: 0px 25px;
+    font-size: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.orange {
+    background-color: rgb(252, 130, 7);
+}
+
+.gray {
+    background-color: rgb(160, 160, 160);
+}
+
+.gray > .value {
+    color: rgb(0,0,0);
+}
+
+
+.inputs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30%;
+    align-items: center;
+    width: 100%;
+}
+
+.secondaryInput {
+    height: 40px;
+    width: 90%;
+    margin: 5px 10px;
+    background-color: rgba(1, 1, 1, 0);
+    color: rgb(180, 180, 180);
+    outline: none;
+	border: none;
+    font-size: 30px;
+    /* direction: rtl; */
+    caret-color: transparent;
+}
+
+
+.firstInput {
+    display: inline-flex;
+    height: 60px;
+    max-width: 100%;
+    margin: 5px 10px;
+    outline: none;
+	border: none;
+    background-color: rgba(1, 1, 1, 0);
+    color: aliceblue;
+    font-size: 50px;
+    /* direction: rtl; */
+    caret-color: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.firstInputDiv {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    width: 90%;
+    max-width: 90%;
+}
